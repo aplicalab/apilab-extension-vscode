@@ -17,9 +17,32 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
 		vscode.window.showInformationMessage('Welcome apilab!');
+
+		// Display a panel to the user
+		var panel = vscode.window.createWebviewPanel(
+			'apilab', // Identifies the type of the webview. Used internally
+			'apilab', // Title of the panel displayed to the user
+			vscode.ViewColumn.One,
+			{}
+		);
+		panel.webview.html = getWebviewContent();
 	});
 
 	context.subscriptions.push(disposable);
+}
+
+function getWebviewContent() {
+	return `<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>apilab</title>
+	</head>
+	<body>
+		<h1>apilab</h1>
+		<p>Welcome to apilab</p>
+	</body>
+	</html>`;
 }
 
 // This method is called when your extension is deactivated
