@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "apilab.helloWorld",
-        "title": "Hello World"
+        "command": "apilab.welcome",
+        "title": "apilab: Welcome"
       }
     ]
   },
